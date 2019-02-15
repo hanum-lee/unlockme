@@ -2,25 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Unlock ME</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
-
 </head>
 <body>
-
-<script>
-    if (annyang) {
-        // Let's define a command.
-        var commands = {
-            'hello': function() { alert('Hello world!'); }
-        };
-
-        // Add our commands to annyang
-        annyang.addCommands(commands);
-
-        // Start listening.
-        annyang.start();
-    }
-</script>
+<script src="voicerecog.js"></script>
 </body>
 </html>

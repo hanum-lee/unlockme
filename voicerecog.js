@@ -1,15 +1,12 @@
-var UserDictation = artyom.newDictation({
-    continuous:true, // Enable continuous if HTTPS connection
-    onResult:function(text){
-        // Do something with the text
-        console.log(text);
-    },
-    onStart:function(){
-        console.log("Dictation started by the user");
-    },
-    onEnd:function(){
-        alert("Dictation stopped by the user");
-    }
-});
-$(document).onload(UserDictation.start());
-//UserDictation.start();
+if (annyang) {
+    // Let's define a command.
+    var commands = {
+        'hello': function() { alert('Hello world!'); }
+    };
+
+    // Add our commands to annyang
+    annyang.addCommands(commands);
+
+    // Start listening.
+    annyang.start();
+}
