@@ -36,7 +36,7 @@ window.onload = function () {
             $("#mic").fadeTo("fast",0);
             $("#result").text(answer).fadeIn(1500, function () {
                 $(this).delay(1500).fadeOut(1500,function () {
-                    $("#login").delay(1500).text("Login!");
+                    $("#login").delay(1500).text("Login!"); // TODO: Change based on Fungai's transition code
                 });
             });
         });
@@ -54,7 +54,6 @@ window.onload = function () {
             openPhone(answer);
         } else {
             wrongWord();
-            //setTestWord();
         }
     };
 
