@@ -12,7 +12,11 @@ window.onload = function () {
         "dire": "to say",
         "falloir": "to be necessary",
         "savoir": "to know",
+        // "bon" : "1",
+        // "test" : "test1"
     };
+
+
 
     var setTestWord = function () {
         var keys = Object.keys(dict);
@@ -21,21 +25,41 @@ window.onload = function () {
 
     setTestWord();
 
-    var openPhone = function () {
-    annyang.abort();
-    // implement, it should wait so the person sees the english word and then it fades and then we go to the new word
-}
+    var openPhone = function (answer) {
+        annyang.abort();
+        console.log("openphone");
+        // implement, it should wait so the person sees the english word and then it fades and then we go to the new word
+        $("#prompt").css('color','blue');
+        $("#prompt").fadeOut(1500,function () {
+            $(this).text("");
+            $("#result").text(answer).fadeIn(1500, function () {
+                $(this).delay(1500).fadeOut(1500,function () {
+                    $("#login").delay(1500).text("Login!");
+                });
+            });
+        });
+    };
 
     var ifWordDisplayedAndSaid = function (spokenWord) {
         if (prompt.textContent.localeCompare(spokenWord) == 0) {
-            prompt.textContent = "";
-            result.textContent = dict[spokenWord];
-            openPhone();
+            //prompt.textContent = "";
+            //result.textContent = dict[spokenWord];
+            let answer = dict[spokenWord];
+            openPhone(answer);
         } else {
-            setTestWord();
+            wrongWord();
+            //setTestWord();
         }
     };
 
+    var wrongWord = function(){
+        console.log("wrongword");
+        $("#prompt").css('color',"red");
+        $("#prompt").effect("shake","default","default",function () {
+            $("#prompt").css('color',"black");
+        });
+        setTestWord();
+    };
     
     if (annyang) {
         // Let's define a command.
