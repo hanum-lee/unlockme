@@ -4,16 +4,16 @@ window.onload = function () {
     var result = document.getElementById('result');
 
     var dict = {
-        "aller": "to go",
-        "avoir": "to have",
-        "être": "to be",
-        "faire": "to make",
-        "voir": "to see",
-        "dire": "to say",
-        "falloir": "to be necessary",
-        "savoir": "to know",
-        // "bon" : "1",
-        // "test" : "test1"
+        // "aller": "to go",
+        // "avoir": "to have",
+        // "être": "to be",
+        // "faire": "to make",
+        // "voir": "to see",
+        // "dire": "to say",
+        // "falloir": "to be necessary",
+        // "savoir": "to know",
+        "bon" : "1",
+        "test" : "test1"
     };
 
 
@@ -32,6 +32,8 @@ window.onload = function () {
         $("#prompt").css('color','blue');
         $("#prompt").fadeOut(1500,function () {
             $(this).text("");
+            clearTimeout(micMovement);
+            $("#mic").fadeTo("fast",0);
             $("#result").text(answer).fadeIn(1500, function () {
                 $(this).delay(1500).fadeOut(1500,function () {
                     $("#login").delay(1500).text("Login!");
@@ -39,6 +41,10 @@ window.onload = function () {
             });
         });
     };
+
+    let micMovement = setInterval(function () {
+        $("#mic").effect("bounce",1000);
+    },2000);
 
     var ifWordDisplayedAndSaid = function (spokenWord) {
         if (prompt.textContent.localeCompare(spokenWord) == 0) {
