@@ -4,16 +4,16 @@ window.onload = function () {
     var result = document.getElementById('result');
 
     var dict = {
-        // "aller": "to go",
-        // "avoir": "to have",
-        // "être": "to be",
-        // "faire": "to make",
-        // "voir": "to see",
-        // "dire": "to say",
-        // "falloir": "to be necessary",
-        // "savoir": "to know",
-        "bon" : "1",
-        "test" : "test1"
+        "aller": "to go",
+        "avoir": "to have",
+        "être": "to be",
+        "faire": "to make",
+        "voir": "to see",
+        "dire": "to say",
+        "falloir": "to be necessary",
+        "savoir": "to know",
+    //    "bon" : "1",
+      //  "test" : "test1"
     };
 
 
